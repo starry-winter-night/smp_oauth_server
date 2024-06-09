@@ -25,7 +25,10 @@
     "xss": "^1.0.15"
   },
   "scripts": {
-    "dev": "node api/index.js",
-    "prod": "node api/index.js"
+    "start": "cross-env NODE_ENV=production nodemon api/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon api/index.js",
+    "prod": "cross-env NODE_ENV=production nodemon api/index.js",
+    "build": "cross-env NODE_ENV=production nodemon api/index.js",
+    "vercel-build": "cross-env NODE_ENV=production nodemon api/index.js"
   }
 }
