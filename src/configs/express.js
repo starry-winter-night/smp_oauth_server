@@ -3,11 +3,11 @@ module.exports = function (express) {
   require('dotenv').config();
   const session = require('express-session');
   const cookieParser = require('cookie-parser');
-  if (process.env.NODE_ENV === 'production') {
-    dotenv.config({ path: '.env.production' });
-  } else {
-    dotenv.config({ path: '.env.local' });
-  }
+  // if (process.env.NODE_ENV === 'production') {
+  //   dotenv.config({ path: '.env.production' });
+  // } else {
+  //   dotenv.config({ path: '.env.local' });
+  // }
 
   const cors = require('cors');
 
