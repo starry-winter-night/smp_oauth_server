@@ -24,7 +24,7 @@ app.use(api);
 
 app.use(errHandlerMiddleware);
 
-const port = process.env.PORT || 4001;
+const port = process.env.PORT || 4002;
 
 app.listen(port, () => console.log(`Server Connected, ${port} port!`));
 
