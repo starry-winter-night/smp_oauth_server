@@ -1,8 +1,9 @@
 const express = require('express');
-const app = express();
+const app = require('./configs/express')(express);
 const { stream } = require('./configs/winston');
 const morgan = require('morgan');
 const cors = require('cors');
+
 const path = require('path');
 const api = require('./api');
 
@@ -10,9 +11,9 @@ const jwtMiddleware = require('./middleware/globalMiddleware/jwtMid');
 const limitMiddleware = require('./middleware/globalMiddleware/limiterMid');
 const errHandlerMiddleware = require('./middleware/globalMiddleware/errorHandlerMid');
 
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/')));
 
 app.use(morgan('combined', { stream }));
 app.use(jwtMiddleware); // 검증 미들웨어가 먼저 사용되어야 함.
@@ -23,7 +24,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use('/api', api);
+app.use(api);
 
 app.use(errHandlerMiddleware);
 
