@@ -33,6 +33,6 @@
     "start": "node api/index.js",
     "dev": "cross-env VERCEL_ENV=development nodemon api/index.js",
     "prod": "node api/index.js",
-    "build": "cross-env VERCEL_ENV=production node api/index.js"
+    "build": "node api/index.js"
   }
 }
