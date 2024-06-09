@@ -1,17 +1,18 @@
 const mongoose = require('mongoose');
+const { ServerApiVersion } = require('mongodb');
+
 mongoose
-  .connect(process.env.DATABASE_URI, {
-    auth: {
-      username: process.env.DATABASE_USER,
-      password: process.env.DATABASE_PASSWORD,
+  .connect(process.env.MONGODB_URI, {
+    serverApi: {
+      version: ServerApiVersion.v1,
+      strict: true,
+      deprecationErrors: true,
     },
-    authSource: 'admin',
   })
   .then(() => {
-    console.log('Connected to MongoDB');
+    console.log('Connected to MongoDB with Mongoose!');
   })
-  .catch((e) => {
-    console.error(e);
+  .catch((err) => {
+    console.error('Failed to connect to MongoDB', err);
   });
-
 module.exports = mongoose;

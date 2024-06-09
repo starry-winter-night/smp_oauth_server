@@ -1,4 +1,9 @@
 {
+  "name": "smpark_oauth_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "connect-mongo": "^3.1.0",
@@ -14,7 +19,7 @@
     "helmet": "^7.1.0",
     "joi": "^17.13.1",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.4.0",
+    "mongoose": "^8.4.1",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.1",
     "path": "^0.12.7",
@@ -25,10 +30,9 @@
     "xss": "^1.0.15"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=production nodemon api/index.js",
-    "dev": "cross-env NODE_ENV=development nodemon api/index.js",
-    "prod": "cross-env NODE_ENV=production nodemon api/index.js",
-    "build": "cross-env NODE_ENV=production nodemon api/index.js",
-    "vercel-build": "cross-env NODE_ENV=production nodemon api/index.js"
+    "start": "node api/index.js",
+    "dev": "cross-env VERCEL_ENV=development nodemon api/index.js",
+    "prod": "node api/index.js",
+    "build": "cross-env VERCEL_ENV=production node api/index.js"
   }
 }

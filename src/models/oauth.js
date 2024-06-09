@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const { replaceManagerListArr } = require('../services/oauth/utils');
 
 // Authorization Code Schema
 const authorizationCodeSchema = new Schema(

@@ -134,7 +134,6 @@ const validateOAuthRequest = async (req, res, next) => {
 };
 /***************** 로그인 진행  *******************/
 const oAuthLogin = async (req, res, next) => {
-  console.log(req.body);
   const validata = {
     client_id: req.body.client_id,
     redirect_uri: req.body.redirect_uri,
@@ -283,6 +282,7 @@ const createTokens = async (req, res, next) => {
     // 접속 토큰 발행 시
     if (grant_type === 'authorization_code') {
       // access token 생성
+
       const access_token = createAccessToken({
         sub: oauth._id,
         name: oauth.client.username,
