@@ -1,0 +1,2 @@
+2024-06-10 00:31:37 error: [2024-06-09T15:31:37.329Z] POST /login - "username" is required
+2024-06-10 16:33:45 error: [2024-06-10T07:33:45.835Z] POST /login - stream is not readable

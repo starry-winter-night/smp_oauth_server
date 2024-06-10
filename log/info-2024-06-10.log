@@ -1,0 +1,17 @@
+2024-06-10 00:31:33 info: ::1 - - [09/Jun/2024:15:31:33 +0000] "GET / HTTP/1.1" 200 1099 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 00:31:33 info: ::1 - - [09/Jun/2024:15:31:33 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 00:31:33 info: ::1 - - [09/Jun/2024:15:31:33 +0000] "GET /login? HTTP/1.1" 200 1392 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 00:31:37 error: [2024-06-09T15:31:37.329Z] POST /login - "username" is required
+2024-06-10 00:31:37 info: ::1 - - [09/Jun/2024:15:31:37 +0000] "POST /login HTTP/1.1" 400 38 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 00:31:53 info: ::1 - - [09/Jun/2024:15:31:53 +0000] "GET /login? HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 00:31:56 info: ::1 - - [09/Jun/2024:15:31:56 +0000] "POST /login HTTP/1.1" 200 57 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 00:31:56 info: ::1 - - [09/Jun/2024:15:31:56 +0000] "GET /oauth/regapp HTTP/1.1" 200 4251 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 00:32:16 info: ::1 - - [09/Jun/2024:15:32:16 +0000] "POST /logout HTTP/1.1" 302 46 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 00:32:16 info: ::1 - - [09/Jun/2024:15:32:16 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 00:32:17 info: ::1 - - [09/Jun/2024:15:32:17 +0000] "GET /login? HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 16:29:23 info: ::1 - - [10/Jun/2024:07:29:23 +0000] "GET / HTTP/1.1" 200 1099 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 16:29:26 info: ::1 - - [10/Jun/2024:07:29:26 +0000] "GET / HTTP/1.1" 200 1099 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 16:31:11 info: ::1 - - [10/Jun/2024:07:31:11 +0000] "GET / HTTP/1.1" 200 1099 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 16:33:35 info: ::1 - - [10/Jun/2024:07:33:35 +0000] "GET / HTTP/1.1" 200 1099 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 16:33:38 info: ::1 - - [10/Jun/2024:07:33:38 +0000] "GET /login HTTP/1.1" 200 1392 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+2024-06-10 16:33:45 error: [2024-06-10T07:33:45.835Z] POST /login - stream is not readable

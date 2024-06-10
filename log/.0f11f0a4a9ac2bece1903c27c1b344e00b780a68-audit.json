@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 180
+    },
+    "auditLog": "/Users/smpark/Documents/projects/oauth/src/log/.0f11f0a4a9ac2bece1903c27c1b344e00b780a68-audit.json",
+    "files": [
+        {
+            "date": 1717896382028,
+            "name": "/Users/smpark/Documents/projects/oauth/src/log/info-2024-06-09.log",
+            "hash": "a61cfc0f52aec9b8437e51fc4bbee5de4a9ea4a01c627bb9a2788a64d80c8e9e"
+        },
+        {
+            "date": 1717947038666,
+            "name": "/Users/smpark/Documents/projects/oauth/src/log/info-2024-06-10.log",
+            "hash": "0b1a93011aede33acf8a263cd6fd1f74f577ce9bef2ca159eb0776c29d5b691b"
+        }
+    ],
+    "hashType": "sha256"
+}
