@@ -13,10 +13,13 @@ const {
 const { serialize } = require('../services/oauth/utils');
 const { createVerifyRule, OAUTH_STATES } = require('../services/oauth/validation');
 const createError = require('http-errors');
+const { connectToDatabase } = require('../configs/mongoose');
 
 // app 페이지
 const regAppView = async (req, res, next) => {
   try {
+    await connectToDatabase();
+
     const user = res.locals.user;
     const oauth = await Oauth.findByUsername(user.username);
 
@@ -34,6 +37,7 @@ const regAppView = async (req, res, next) => {
 
 // app 등록
 const regApp = async (req, res, next) => {
+  await connectToDatabase();
   const user = res.locals.user;
   const regData = req.body;
 
@@ -67,6 +71,7 @@ const regApp = async (req, res, next) => {
 };
 /***************** client용 로그인 페이지 뷰  *******************/
 const validateOAuthRequest = async (req, res, next) => {
+  await connectToDatabase();
   const { client_id, redirect_uri, state } = req.query;
   const validata = { client_id: client_id, redirect_uri: redirect_uri, state };
   // 파라미터 유효성 검증
@@ -134,6 +139,7 @@ const validateOAuthRequest = async (req, res, next) => {
 };
 /***************** 로그인 진행  *******************/
 const oAuthLogin = async (req, res, next) => {
+  await connectToDatabase();
   const validata = {
     client_id: req.body.client_id,
     redirect_uri: req.body.redirect_uri,
@@ -201,6 +207,7 @@ const oAuthLogin = async (req, res, next) => {
 };
 
 const saveAgreement = async (req, res, next) => {
+  await connectToDatabase();
   let reqInfoArrayParsed = [];
 
   try {
@@ -223,6 +230,8 @@ const saveAgreement = async (req, res, next) => {
   };
 
   const schema = createVerifyRule(OAUTH_STATES.AGREEMENT_POST);
+  await connectToDatabase();
+
   const { error, value } = schema.validate(validata);
   if (error) {
     return next(createError(400, error.details[0].message));
@@ -240,6 +249,7 @@ const saveAgreement = async (req, res, next) => {
 };
 
 const createTokens = async (req, res, next) => {
+  await connectToDatabase();
   const authHeader = req.headers['authorization'];
 
   if (!authHeader || !authHeader.startsWith('Basic ')) {

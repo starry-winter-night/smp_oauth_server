@@ -2,9 +2,11 @@ const Oauth = require('../../models/oauth');
 const createError = require('http-errors');
 const { referrerCheck, xssCheck, redirectCheck } = require('../../services/oauth/security');
 const helmet = require('helmet');
+const { connectToDatabase } = require('../../configs/mongoose');
 
 // 각종 검증 로직 미들웨어
 const verifyCheck = async (req, res, next) => {
+  await connectToDatabase();
   const { client_id, redirect_uri } = !Object.keys(req.query).length //
     ? req.body
     : req.query;

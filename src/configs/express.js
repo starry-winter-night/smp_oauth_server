@@ -16,17 +16,22 @@ module.exports = function (express) {
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
   app.use(cookieParser());
-  app.use(
-    helmet({
-      contentSecurityPolicy: {
-        directives: {
-          defaultSrc: ["'self'"],
-          formAction: ["'self'"],
-          scriptSrc: ["'self'"],
-        },
-      },
-    })
-  );
+
+  const cspOptions = {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", 'https://vercel.live'],
+      styleSrc: ["'self'", `'unsafe-inline'`, 'https://vercel.live'],
+      connectSrc: ["'self'", 'https://vercel.live', 'https://vitals.vercel-insights.com', 'wss://ws-us3.pusher.com'],
+      imgSrc: ["'self'", 'data:', 'blob:', 'https://vercel.com'],
+      fontSrc: ["'self'", 'https://assets.vercel.com'],
+      objectSrc: ["'none'"],
+      formAction: ["'self'"],
+      frameAncestors: ["'none'"],
+      frameSrc: ["'self'", 'https://vercel.live'],
+    },
+  };
+  app.use(helmet.contentSecurityPolicy(cspOptions));
   app.use(helmet.xssFilter());
 
   return app;

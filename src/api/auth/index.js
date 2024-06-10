@@ -5,7 +5,9 @@ auth.get('/register', (req, res) => (res.locals.user ? res.redirect('/oauth/rega
 
 auth.post('/register', authCtrl.userRegister);
 
-auth.get('/login', (req, res) => (res.locals.user ? res.redirect('/oauth/regapp') : res.render('auth/login')));
+auth.get('/login', async (req, res) => {
+  res.locals.user ? res.redirect('/oauth/regapp') : res.render('auth/login');
+});
 
 auth.post('/login', authCtrl.userLogin);
 

@@ -1,12 +1,13 @@
 const Member = require('../models/member');
 const Oauth = require('../models/oauth');
-const mongoose = require('../configs/mongoose');
+const { mongoose, connectToDatabase } = require('../configs/mongoose');
 const { createVerifyRule, AUTH_STATES } = require('../services/auth/validation');
 const { createExpiresIn, createLoginToken } = require('../services/auth/token');
 const { serialize } = require('../services/auth/utils');
 const createError = require('http-errors');
 
 const userRegister = async (req, res, next) => {
+  await connectToDatabase();
   // Joi 파라미터 검증 규칙 생성
   const schema = createVerifyRule(AUTH_STATES.SIGN_UP);
   //Joi 파라미터 검증 실행
@@ -71,6 +72,7 @@ const userRegister = async (req, res, next) => {
 };
 
 const userLogin = async (req, res, next) => {
+  await connectToDatabase();
   // 파라미터 검증 규칙
   const schema = createVerifyRule(AUTH_STATES.SIGN_IN);
 
