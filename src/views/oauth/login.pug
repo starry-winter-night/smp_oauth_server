@@ -6,7 +6,7 @@ block content
     form#oauthForm(action='/oauth/authorize', method='post')
       .form-group
         label(for='oauthInputId') 아이디
-        input#oauthInputId.form-control(type='text', name='username', placeholder='아이디를 입력하세요' autocomplete='username')
+        input#oauthInputId.form-control(type='text', name='id', placeholder='아이디를 입력하세요' autocomplete='id')
       .form-group
         label(for='oauthInputPassword') 패스워드
         input#oauthInputPassword.form-control(type='password', name='password', placeholder='암호', autocomplete='current-password')
